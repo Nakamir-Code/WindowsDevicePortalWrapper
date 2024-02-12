@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package>
     <metadata>
         <id>WindowsDevicePortalWrapper</id>
         <version>0.0.0.0</version>
@@ -13,18 +13,22 @@
 
 See the GitHub repo at https://github.com/microsoft/windowsdeviceportalwrapper</description>
         <summary>Remote control of Windows 10 device for developers and device labs.</summary>
-        <releaseNotes>[FILL IN BEFORE RELEASE]</releaseNotes>
+        <!-- <releaseNotes>[FILL IN BEFORE RELEASE]</releaseNotes> -->
         <copyright>© Microsoft Corporation. All rights reserved.</copyright>
         <language />
         <tags>WDP Windows 10 Device Portal</tags>
+        <dependencies>
+            <group targetFramework="net480" />
+            <group targetFramework="uap10.0" />
+        </dependencies>  
     </metadata>
 	<files>
-		<file src="WindowsDevicePortalWrapper.dll" target="lib\net452" />
-		<file src="release\AnyCPU\WindowsDevicePortalWrapper.pdb" target="lib\net452" />
-		<file src="release\AnyCPU\WindowsDevicePortalWrapper.xml" target="lib\net452" />
-		           
-		<file src="WindowsDevicePortalWrapper.UniversalWindows.dll" target="lib\uap10.0" />
-		<file src="release\AnyCPU\WindowsDevicePortalWrapper.UniversalWindows\WindowsDevicePortalWrapper.UniversalWindows.pdb" target="lib\uap10.0" />
-		<file src="release\AnyCPU\WindowsDevicePortalWrapper.UniversalWindows\WindowsDevicePortalWrapper.UniversalWindows.XML" target="lib\uap10.0" />
+		<file src="..\WindowsDevicePortalWrapper\bin\Release\WindowsDevicePortalWrapper.dll" target="lib\net480" />
+		<file src="..\WindowsDevicePortalWrapper\bin\Release\WindowsDevicePortalWrapper.pdb" target="lib\net480" />
+		<file src="..\WindowsDevicePortalWrapper\bin\Release\WindowsDevicePortalWrapper.xml" target="lib\net480" />
+
+		<file src="..\WindowsDevicePortalWrapper.UniversalWindows\bin\Release\WindowsDevicePortalWrapper.UniversalWindows.dll" target="lib\uap10.0" />
+		<file src="..\WindowsDevicePortalWrapper.UniversalWindows\bin\Release\WindowsDevicePortalWrapper.UniversalWindows.pdb" target="lib\uap10.0" />
+		<file src="..\WindowsDevicePortalWrapper.UniversalWindows\bin\Release\WindowsDevicePortalWrapper.UniversalWindows.XML" target="lib\uap10.0" />
     </files>
 </package>
