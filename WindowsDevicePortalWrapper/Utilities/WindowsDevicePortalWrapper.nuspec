@@ -2,7 +2,7 @@
 <package>
     <metadata>
         <id>WindowsDevicePortalWrapper</id>
-        <version>0.0.0.0</version>
+        <version>0.0.1</version>
         <title>Windows Device Portal Wrapper</title>
         <authors>Microsoft</authors>
         <owners>Microsoft; Windows Device Portal</owners>
