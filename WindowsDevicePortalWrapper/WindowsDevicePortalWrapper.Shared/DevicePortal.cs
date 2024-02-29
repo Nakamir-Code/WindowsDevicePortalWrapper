@@ -64,21 +64,21 @@ namespace Microsoft.Tools.WindowsDevicePortal
 
         // Enable/disable useUnsafeHeaderParsing.
         // See https://social.msdn.microsoft.com/Forums/en-US/ff098248-551c-4da9-8ba5-358a9f8ccc57/how-do-i-enable-useunsafeheaderparsing-from-code-net-20?forum=netfxnetcom
-        private static bool ToggleAllowUnsafeHeaderParsing(bool enable)
-        {
-            Type settingsSectionType = Assembly.GetAssembly(typeof(System.Net.Configuration.SettingsSection))?.GetType("System.Net.Configuration.SettingsSectionInternal");
-            if (settingsSectionType == null) { return false; }
+        //private static bool ToggleAllowUnsafeHeaderParsing(bool enable)
+        //{
+        //    Type settingsSectionType = Assembly.GetAssembly(typeof(System.Net.Configuration.SettingsSection))?.GetType("System.Net.Configuration.SettingsSectionInternal");
+        //    if (settingsSectionType == null) { return false; }
 
-            object anInstance = settingsSectionType.InvokeMember("Section", BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.NonPublic, null, null, new object[] { });
-            if (anInstance == null) { return false; }
+        //    object anInstance = settingsSectionType.InvokeMember("Section", BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.NonPublic, null, null, new object[] { });
+        //    if (anInstance == null) { return false; }
 
-            FieldInfo aUseUnsafeHeaderParsing = settingsSectionType.GetField("useUnsafeHeaderParsing", BindingFlags.NonPublic | BindingFlags.Instance);
-            if (aUseUnsafeHeaderParsing == null) { return false; }
+        //    FieldInfo aUseUnsafeHeaderParsing = settingsSectionType.GetField("useUnsafeHeaderParsing", BindingFlags.NonPublic | BindingFlags.Instance);
+        //    if (aUseUnsafeHeaderParsing == null) { return false; }
 
-            aUseUnsafeHeaderParsing.SetValue(anInstance, enable);
+        //    aUseUnsafeHeaderParsing.SetValue(anInstance, enable);
 
-            return true;
-        }
+        //    return true;
+        //}
 
         /// <summary>
         /// Initializes static members of the <see cref="DevicePortal" /> class.
@@ -86,10 +86,10 @@ namespace Microsoft.Tools.WindowsDevicePortal
         static DevicePortal()
         {
             System.Net.ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-            if (!ToggleAllowUnsafeHeaderParsing(true))
-            {
-                Console.WriteLine("Failed to enable useUnsafeHeaderParsing");
-            }
+            //if (!ToggleAllowUnsafeHeaderParsing(true))
+            //{
+            //    Console.WriteLine("Failed to enable useUnsafeHeaderParsing");
+            //}
         }
 
 #endif
